@@ -28,7 +28,7 @@ router.post( '/', function( req, res, next ) {
             if ( err ) {
                 return next( err )
             }
-            res.send( 201 )
+            res.sendStatus( 201 )
         })
     })
 })
