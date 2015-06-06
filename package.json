@@ -1,6 +1,8 @@
 {
   "name": "texturepot",
+  "repository": "https://github.com/Driftologist/texturepot",
   "dependencies": {
+    "bcrypt": "^0.8.3",
     "body-parser": "^1.12.4",
     "express": "^4.12.4",
     "gulp": "^3.9.0",
@@ -10,6 +12,8 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-stylus": "^2.0.3",
     "gulp-uglify": "^1.2.0",
+    "jwt-simple": "^0.3.0",
+    "lodash": "^3.9.3",
     "mongoose": "^4.0.4"
   }
 }
