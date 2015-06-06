@@ -1,6 +1,6 @@
 
-var Post = require( '../../models/post' )
 var router = require( 'express' ).Router()
+var Post = require( '../../models/post' )
 
 router.get( '/', function( req, res, next ) {
     Post.find()
@@ -18,7 +18,7 @@ router.post( '/', function( req, res, next ) {
     post.username = req.auth.username,
     post.save( function ( err, post ) {
         if ( err ) { return next( err ) }
-        res.json( 201, post)
+        res.json( 201, post )
     })
 })
 
