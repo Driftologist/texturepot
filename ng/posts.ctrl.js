@@ -13,7 +13,6 @@ angular.module( 'app' )
     }
     
     $scope.$on( 'ws:new_post', function( _, post ) {
-        console.log('hi')
         $scope.$apply( function() {
             $scope.posts.unshift( post )
         })
