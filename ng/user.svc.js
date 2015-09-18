@@ -22,4 +22,8 @@ angular.module( 'app' )
             return svc.login( val.config.data.username, val.config.data.password )
         })
     }
+    svc.removeToken = function() {
+        console.log(svc.token)
+        svc.token = undefined
+    }
 })
