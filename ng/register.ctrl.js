@@ -3,7 +3,7 @@ angular.module( 'app' )
     $scope.createUser = function( username, password ) {
         UserSvc.createUser( username, password )
         .then( function( response ) {
-            $scope.$emit( 'register', response.data )
+            $scope.$emit( 'login', response.data )
         })
     }
 } )
