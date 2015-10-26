@@ -15,5 +15,9 @@
     "jwt-simple": "^0.3.0",
     "lodash": "^3.9.3",
     "mongoose": "^4.0.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "protractor": "^2.5.1"
   }
 }
