@@ -20,7 +20,6 @@ describe( 'making a post', function() {
         var post = 'my test post' + Math.random()
         element( by.model( 'postBody' ) ).sendKeys( post )
         element( by.css( 'form .btn' ) ).click()
-        browser.pause()
         
         // check that new post appears on the page
         expect( element.all( by.css( 'ul.posts li' ) ).first().getText() )
