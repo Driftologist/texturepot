@@ -1,5 +1,7 @@
 var db = require( '../../db' )
-var expect = require( 'chai' ).expect
+var chai = require( 'chai' )
+chai.use( require( 'chai-as-promised' ) )
+var expect = chai.expect
 
 describe( 'making a post', function() {
     it( 'creates an account and creates a new post', function() {
@@ -22,8 +24,7 @@ describe( 'making a post', function() {
         
         // check that new post appears on the page
         element.all( by.css( 'ul.list-group li' ) ).first().getText()
-            .then(function( text ) {
-            expect( text ).to.contain( post )
+            .to.eventually.contain( post )
         })
     })
     afterEach( function() {
