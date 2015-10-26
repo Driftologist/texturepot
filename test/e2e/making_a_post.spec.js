@@ -23,9 +23,8 @@ describe( 'making a post', function() {
         browser.pause()
         
         // check that new post appears on the page
-        element.all( by.css( 'ul.list-group li' ) ).first().getText()
+        expect( element.all( by.css( 'ul.posts li' ) ).first().getText() )
             .to.eventually.contain( post )
-        })
     })
     afterEach( function() {
         db.connection.db.dropDatabase()
