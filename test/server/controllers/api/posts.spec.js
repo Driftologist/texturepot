@@ -1,5 +1,6 @@
 var expect = require( 'chai' ).expect
 var api = require( '../../support/api' )
+var user = require( '../../support/user' )
 var Post = require( '../../../../models/post' )
 
 describe( 'controllers.api.posts', function() {
@@ -25,6 +26,33 @@ describe( 'controllers.api.posts', function() {
                 }
             })
             .end( done )
+        })
+    })
+
+    describe( 'POST /api/posts', function() {
+        var token,
+            post = 'this is the test post ' + Math.random()
+
+        beforeEach( function( done ) {
+            user.create( 'drift', 'pass', function( err, user ) {
+                token = user.token
+                done( err )
+            })
+        })
+
+        beforeEach( function( done ) {
+            api.post( '/api/posts' )
+            .send({ body: 'this is the test post' })
+            .set( 'X-Auth', token )
+            .expect( 201 )
+            .end( done )
+        })
+
+        it( 'added 1 new post', function( done ) {
+            Post.findOne( function( err, post ) {
+                expect( post.body ).to.equal( 'this is the test post' )
+                done( err )
+            })
         })
     })
 })
