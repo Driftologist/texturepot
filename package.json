@@ -24,5 +24,8 @@
     "mocha": "^2.3.3",
     "protractor": "^2.5.1",
     "supertest": "^1.1.0"
+  },
+  "scripts": {
+      "test": "./node_modules/.bin/mocha && ./node_modules/.bin/protractor"
   }
 }
