@@ -17,13 +17,12 @@ describe( 'making a post', function() {
         element( by.css( 'nav .posts' ) ).click()
         
         // submit a new post on the posts page
-        var post = 'my test post' + Math.random()
-        element( by.model( 'postBody' ) ).sendKeys( post )
-        element( by.css( 'form .btn' ) ).click()
+        var post = 'my test post ' + Math.random()
+        element( by.css( '.post-input' ) ).sendKeys( post )
+        element( by.css( '.btn.add-post' ) ).click()
         
         // check that new post appears on the page
-        expect( element.all( by.css( 'ul.posts li' ) ).first().getText() )
-            .to.eventually.contain( post )
+        expect( element.all( by.css( 'ul.posts li' ) ).first().getText() ).to.eventually.contain( post )
     })
     afterEach( function() {
         db.connection.db.dropDatabase()

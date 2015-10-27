@@ -26,4 +26,19 @@ describe( 'post.svc', function() {
             })
         })
     })
+    
+//    describe( '#create', function() {
+//        beforeEach( function() {
+//            $httpBackend.expect( 'POST', '/api/posts' )
+//            .send([
+//                { username: 'spirift', body: 'test post POST' }
+//            ])
+//        })
+//        
+//        it( 'posts 1 post', function() {
+//            PostsSvc.create().success( function( posts ) {
+//                expect( posts ).to.have.length( 1 )
+//            })
+//        })
+//    })
 })
