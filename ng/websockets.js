@@ -1,7 +1,7 @@
 angular.module( 'app' )
-.run( function( $rootScope, $timeout ) {
+.run( function( $rootScope, $window ) {
     (function connect() {
-        var url = 'ws://localhost:3000'
+        var url = 'ws://' + $window.location.host
         var connection = new WebSocket( url )
         
         connection.onclose = function( e ) {
