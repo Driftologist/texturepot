@@ -8,7 +8,10 @@ describe( 'posts.ctrl', function() {
             var deferred = $q.defer()
             deferred.resolve([
                 { username: 'spirift', body: 'first post' },
-                { username: 'spirift', body: 'second post' }
+                { username: 'spirift', body: 'second post' },
+                { username: 'spirift', body: 'third post' },
+                { username: 'spirift', body: 'fourth post' },
+                { username: 'spirift', body: 'fifth post' }
             ])
             return deferred.promise
         }
@@ -24,6 +27,6 @@ describe( 'posts.ctrl', function() {
     
     it( 'loads posts from the service  ', function() {
         $scope.$digest()
-        expect( $scope.posts ).to.have.length( 2 )
+        expect( $scope.posts ).to.have.length( 5 )
     })
 })

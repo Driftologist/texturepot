@@ -1,22 +1,22 @@
 angular.module( 'app' )
 .controller( 'PostsCtrl', function( $scope, PostsSvc ) {
     $scope.addPost = function() {
-        if ( $scope.post.body ) {
+        if ( $scope.postBody ) {
             PostsSvc.create({
-                body: $scope.post.body
+                body: $scope.postBody
             }).then( function() {
-                $scope.post.body = null
+                $scope.postBody = null
             })
         }
     }
-    
-    PostsSvc.fetch().then( function( posts ) {
-        $scope.posts = posts
-    })
     
     $scope.$on( 'ws:new_post', function( _, post ) {
         $scope.$apply( function() {
             $scope.posts.unshift( post )
         })
+    })
+    
+    PostsSvc.fetch().then( function( posts ) {
+        $scope.posts = posts
     })
 })

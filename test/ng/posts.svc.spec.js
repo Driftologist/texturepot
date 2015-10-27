@@ -21,7 +21,7 @@ describe( 'post.svc', function() {
         })
         
         it( 'gets 2 posts', function() {
-            PostsSvc.fetch().success( function( posts ) {
+            PostsSvc.fetch().then( function( posts ) {
                 expect( posts ).to.have.length( 2 )
             })
         })
