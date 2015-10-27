@@ -1,14 +1,14 @@
 describe( 'post.svc', function() {
     beforeEach( module( 'app' ) )
-    var PostSvc
+    var PostsSvc
     
-    beforeEach( inject( function( _PostSvc_ ) {
-        PostSvc = _PostSvc_
+    beforeEach( inject( function( _PostsSvc_ ) {
+        PostsSvc = _PostsSvc_
     }))
     
     describe( '#fetch', function() {
         it( 'exists', function() {
-            expect( PostSvc.fetch ).to.exist
+            expect( PostsSvc.fetch ).to.exist
         })
     })
 })
