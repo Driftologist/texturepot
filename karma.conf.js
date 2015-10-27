@@ -7,6 +7,7 @@ module.exports = function( config ) {
             'assets/angular-mocks/angular-mocks.js',
             'assets/angular-jwt/dist/angular-jwt.js',
             'ng/**/module.js',
+            'ng/**/*.js',
             'test/ng/**/*.spec.js'
         ],
         reporters: [ 'progress' ],
