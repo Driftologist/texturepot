@@ -5,6 +5,7 @@ module.exports = function( config ) {
             'assets/angular/angular.js',
             'assets/angular-route/angular-route.js',
             'assets/angular-mocks/angular-mocks.js',
+            'assets/angular-jwt/dist/angular-jwt.js',
             'ng/**/module.js',
             'test/ng/**/*.spec.js'
         ],
