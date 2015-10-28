@@ -15,6 +15,11 @@ describe( 'posts.ctrl', function() {
             ])
             return deferred.promise
         }
+        mockPostsSvc.create = function() {
+            var deferred = $q.defer()
+            deferred.resolve()
+            return deferred.promise
+        }
     }))
     
     beforeEach( inject( function( $rootScope, $controller ) {
@@ -28,5 +33,12 @@ describe( 'posts.ctrl', function() {
     it( 'loads posts from the service  ', function() {
         $scope.$digest()
         expect( $scope.posts ).to.have.length( 5 )
+    })
+    
+    it( 'sends a new post to the service', function() {
+        sinon.spy( mockPostsSvc, 'create' )
+        $scope.postBody = 'my new post'
+        $scope.addPost()
+        expect( mockPostsSvc.create ).to.have.been.calledWith({ body: 'my new post' })
     })
 })
