@@ -4,8 +4,11 @@ angular.module( 'app' )
         $scope.currentUser = user
     })
     if ($window.localStorage.token) {
-        $scope.$emit( 'login', jwtHelper.decodeToken($window.localStorage.token) )
-        UserSvc.getUser()
+        UserSvc.getUser().then(function(val) {
+            if (val.data) {
+                $scope.$emit( 'login', jwtHelper.decodeToken($window.localStorage.token) )
+            }
+        })
     }
     $scope.logout = function() {
         if ($scope.currentUser) {
